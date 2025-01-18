@@ -2,6 +2,7 @@ import express, { json } from "express";
 import dotenv from "dotenv";
 import dbConnect from "./config/dbConnect.js";
 import authRoute from "./routes/authRoute.js";
+import userRoute from "./routes/userRoute.js";
 
 // Load environment variables
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(json());
 
 // Routes
 app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
 
 const port = process.env.PORT || 5000;
 
